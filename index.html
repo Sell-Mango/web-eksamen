@@ -5,7 +5,7 @@
         <meta viewport="width=device-width, initial-scale=1.0">
         <meta name="description" content="Company name">
         <script src="https://kit.fontawesome.com/8aebfcef07.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="scss/styles.scss" type="text/css">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
         <title>Company name</title>
     </head>
     <body>
@@ -20,53 +20,55 @@
                 </ul>
         </header>
         <main>
-            <section>
+            <section class="sec-onecol bg-light">
                 <h1>Compeling headline</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta.</p>
                 <a href="#sec-services">Read more about out services</a>
                 <img src="#" alt="">
             </section>
-            <section>
+            <section class="sec-onecol">
                 <h2>Engaging subheading. What can you help your visitors with</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta.</p>
             </section>
-            <section>
-                <h2>About our company</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta.</p>
-                <a href="about.html">Read more about our us</a>
+            <section class="sec-twocol bg-light">
+                <article>
+                    <h2>About our company</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta.</p>
+                    <a href="about.html">Read more about our us</a>
+                </article>
                 <img src="img/placeholder_400x400.jpg" alt="">
             </section>
-            <section id="sec-services">
+            <section id="sec-services" class="sec-fourcol">
                 <h2>Our services</h2>
-                <article>
+                <article class="service">
                     <h3>Branding</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-users"></i>
                 </article>
-                <article>
+                <article class="service">
                     <h3>Branding</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-cloud-arrow-up"></i>
                 </article>
-                <article>
+                <article class="service">
                     <h3>Branding</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-code"></i>
                 </article>
-                <article>
+                <article class="service">
                     <h3>Branding</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-wifi"></i>
                 </article>
             </section>
         </main>
-        <aside>
+        <aside class="bg-light">
             <h2>Sign up for our newsletter</h2>
             <form>
                 <input type="email" placeholder="Email">
                 <input type="submit" value="Sign me up">
         </aside>
-        <footer>
+        <footer class="bg-light">
             <a href="index.html"><img src="img/logo1.png" alt=""></a>
             <p>Company copyright 2023</p>
             <a href="#"><i class="fa-brands fa-square-facebook"></i></a>

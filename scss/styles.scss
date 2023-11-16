@@ -1,0 +1,173 @@
+// ########## Global ##########
+body {
+    //font-family: 'Inter', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main { overflow: hidden; }
+
+//Colorpalette
+$primary: #fff;
+$secondary: #252525;
+$tertiary: #e6bd43;
+$black: #000;
+
+//Spacing
+$document-width: 1600px;
+$document-inner-width: 1000px;
+$document-space: 20px;
+
+
+// ########## Global end ##########
+
+// ########## Global layout ##########
+
+//Document max width margin
+header, footer > *, aside > * {
+    max-width: $document-width;
+    margin: auto;
+}
+
+// Document max width
+.sec-onecol > *, .sec-twocol > * {
+    max-width: $document-width;
+}
+
+//Document spacing
+header, footer, aside, .sec-onecol, .sec-twocol, .sec-fourcol {
+    padding-left: $document-space;
+    padding-right: $document-space;
+}
+
+//Flex display
+header, footer, aside, ul, .sec-onecol, .sec-twocol  {
+    display: flex;
+}
+
+//Flex column
+header, footer, aside, nav ul, .sec-onecol, .sec-twocol {
+    flex-direction: column;
+}
+
+//Grid display
+.sec-fourcol {
+    display: grid;
+}
+
+// ########## Global layout end ##########
+
+// ########## Utility classes ##########
+.bg-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.bg-light {
+    background-color: #ededed;
+}
+
+// ########## Utility end ##########
+
+// ########## Header ##########
+header {
+    align-items: center;
+}
+
+nav {
+    ul {
+        padding-left: 0;
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+
+}
+
+// ########## Header end ##########
+
+// ########## Main ##########
+
+.sec-onecol {
+    align-items: center;
+    text-align: center;
+}
+
+.sec-twocol {
+    justify-content: center;
+
+    article {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.sec-fourcol {
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// ########## Footer ##########
+footer {
+    p {
+        flex-grow: 2;
+        text-align: center;
+    }
+}
+
+// ########## Media Queries ##########
+$breakpoint-tablet: 760px;
+$breakpoint-small-laptop: 991px;
+
+@media only screen and (min-width: $breakpoint-tablet) {
+    header, footer {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    nav {
+        ul {
+            flex-direction: row;
+        }
+    }
+    
+    .sec-twocol {
+        flex-direction: row;
+
+        article {
+            justify-content: center;
+            text-align: left;
+            order: 2;
+        }
+    }
+
+    .sec-fourcol {
+        :first-child {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media only screen and (min-width: $breakpoint-small-laptop) {
+
+}
+
+

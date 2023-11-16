@@ -1,1 +1,120 @@
-/*# sourceMappingURL=styles.css.map */
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  overflow: hidden;
+}
+
+header, footer > *, aside > * {
+  max-width: 1600px;
+  margin: auto;
+}
+
+.sec-onecol > *, .sec-twocol > * {
+  max-width: 1600px;
+}
+
+header, footer, aside, .sec-onecol, .sec-twocol, .sec-fourcol {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header, footer, aside, ul, .sec-onecol, .sec-twocol {
+  display: flex;
+}
+
+header, footer, aside, nav ul, .sec-onecol, .sec-twocol {
+  flex-direction: column;
+}
+
+.sec-fourcol {
+  display: grid;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bg-light {
+  background-color: #ededed;
+}
+
+header {
+  align-items: center;
+}
+
+nav ul {
+  padding-left: 0;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul a {
+  text-decoration: none;
+}
+
+.sec-onecol {
+  align-items: center;
+  text-align: center;
+}
+
+.sec-twocol {
+  justify-content: center;
+}
+.sec-twocol article {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.sec-fourcol {
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer p {
+  flex-grow: 2;
+  text-align: center;
+}
+
+@media only screen and (min-width: 760px) {
+  header, footer {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  nav ul {
+    flex-direction: row;
+  }
+  .sec-twocol {
+    flex-direction: row;
+  }
+  .sec-twocol article {
+    justify-content: center;
+    text-align: left;
+    order: 2;
+  }
+  .sec-fourcol {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .sec-fourcol :first-child {
+    grid-column: 1/-1;
+    text-align: center;
+  }
+}/*# sourceMappingURL=styles.css.map */
