@@ -43,12 +43,12 @@ header, .footer-inner {
 }
 
 // Document inner width 
-.sec-onecol > *, .content-wrapper {
+.content-wrapper {
     max-width: $document-inner-width;
 }
 
 //center max width
-header, .content-wrapper {
+header, .content-wrapper, .footer-inner {
     margin: auto;
 }
 
@@ -93,11 +93,21 @@ ul {
 .sec-twocol {
     @include grid-display (grid, 1fr, auto);
 
+    :first-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
     justify-content: center;
 }
 
 .sec-fourcol {
     @include grid-display (grid, 1fr, auto);
+
+    :first-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
     
     text-align: center;
 }
@@ -161,8 +171,58 @@ nav {
     i {
         order: -1;
     }
-
 }
+
+.portfolio-row {
+    @include flex-display (flex, row, wrap, center, center);
+
+    :first-child {
+        width: 100%;
+    }
+    padding-left: $document-space;
+    padding-right: $document-space;
+}
+
+.portfolio-card {
+    @include flex-display (flex, column, wrap, center, start);
+    flex-grow: 1;
+    max-width: 629px;
+    text-align: left;
+
+    img {
+        order: -1;
+        width: 100%;
+    }
+}
+
+#contact {
+    form {
+        @include flex-display (flex, column, wrap, inherit, start);
+
+        /*input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        } */
+    }
+
+    article {
+        @include flex-display (flex, column, wrap, space-between, start);
+
+        text-align: left;
+    }
+}
+
 
 // ########## Main end ##########
 
@@ -202,22 +262,16 @@ $breakpoint-small-laptop: 991px;
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .page-hero {
-        article {
-            grid-column: 2;
-        }
+    .sec-fourcol {
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .page-hero-content {
-        order: 2;
+        grid-column: 2;
     }
 
-    .sec-fourcol {
-        :first-child {
-            grid-column: 1 / -1;
-            text-align: center;
-        }
-        grid-template-columns: repeat(4, 1fr);
+    .portfolio-row {
+        justify-content: start;
     }
 
     .footer-inner {

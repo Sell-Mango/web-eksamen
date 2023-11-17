@@ -12,11 +12,11 @@ header, .footer-inner {
   max-width: 1600px;
 }
 
-.sec-onecol > *, .content-wrapper {
+.content-wrapper {
   max-width: 1300px;
 }
 
-header, .content-wrapper {
+header, .content-wrapper, .footer-inner {
   margin: auto;
 }
 
@@ -78,11 +78,19 @@ ul {
   grid-template-rows: auto;
   justify-content: center;
 }
+.sec-twocol :first-child {
+  grid-column: 1/-1;
+  text-align: center;
+}
 
 .sec-fourcol {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
+  text-align: center;
+}
+.sec-fourcol :first-child {
+  grid-column: 1/-1;
   text-align: center;
 }
 
@@ -138,6 +146,65 @@ nav ul a {
   order: -1;
 }
 
+.portfolio-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.portfolio-row :first-child {
+  width: 100%;
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  flex-grow: 1;
+  max-width: 629px;
+  text-align: left;
+}
+.portfolio-card img {
+  order: -1;
+  width: 100%;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: inherit;
+  align-items: start;
+  /*input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+
+  input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+  } */
+}
+#contact article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  text-align: left;
+}
+
 .footer-inner p {
   flex-grow: 2;
   text-align: center;
@@ -161,18 +228,14 @@ nav ul a {
   .sec-twocol {
     grid-template-columns: repeat(2, 1fr);
   }
-  .page-hero article {
-    grid-column: 2;
-  }
-  .page-hero-content {
-    order: 2;
-  }
   .sec-fourcol {
     grid-template-columns: repeat(4, 1fr);
   }
-  .sec-fourcol :first-child {
-    grid-column: 1/-1;
-    text-align: center;
+  .page-hero-content {
+    grid-column: 2;
+  }
+  .portfolio-row {
+    justify-content: start;
   }
   .footer-inner {
     flex-direction: row;
