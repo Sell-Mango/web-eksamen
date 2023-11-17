@@ -3,6 +3,7 @@ body {
     //font-family: 'Inter', sans-serif;
     margin: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 main { overflow: hidden; }
@@ -15,49 +16,104 @@ $black: #000;
 
 //Spacing
 $document-width: 1600px;
-$document-inner-width: 1000px;
+$document-inner-width: 1300px;
 $document-space: 20px;
 
 
 // ########## Global end ##########
 
 // ########## Global layout ##########
+@mixin flex-display ($display, $direction, $wrap, $justify, $align) {
+    display: $display;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
 
-//Document max width margin
-header, footer > *, aside > * {
-    max-width: $document-width;
-    margin: auto;
+@mixin grid-display ($display, $columns, $rows) {
+    display: $display;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
 }
 
 // Document max width
-.sec-onecol > *, .sec-twocol > * {
+header, .footer-inner {
     max-width: $document-width;
 }
 
+// Document inner width 
+.sec-onecol > *, .content-wrapper {
+    max-width: $document-inner-width;
+}
+
+//center max width
+header, .content-wrapper {
+    margin: auto;
+}
+
 //Document spacing
-header, footer, aside, .sec-onecol, .sec-twocol, .sec-fourcol {
+header, footer, aside, .sec-onecol, .sec-onerow, .sec-twocol, .sec-fourcol {
     padding-left: $document-space;
     padding-right: $document-space;
 }
 
-//Flex display
-header, footer, aside, ul, .sec-onecol, .sec-twocol  {
-    display: flex;
+header {
+    @include flex-display (flex, column, wrap, space-between, center);
 }
 
-//Flex column
-header, footer, aside, nav ul, .sec-onecol, .sec-twocol {
-    flex-direction: column;
+ul {
+    @include flex-display (flex, column, nowrap, inherit, center);
+
+    padding-left: 0;
 }
 
-//Grid display
+.sec-onecol {
+    @include flex-display (flex, column, wrap, inherit, center);
+
+    align-items: center;
+    text-align: center;
+}
+
+.sec-onerow {
+    @include flex-display (flex, column, wrap, center, center);
+
+    > h2 { 
+        width: 100%;
+        text-align: center;
+     }
+
+    article {
+        @include flex-display(flex, column, wrap, inherit, center);
+        
+        text-align: center;
+    }
+}
+
+.sec-twocol {
+    @include grid-display (grid, 1fr, auto);
+
+    justify-content: center;
+}
+
 .sec-fourcol {
-    display: grid;
+    @include grid-display (grid, 1fr, auto);
+    
+    text-align: center;
 }
 
-// ########## Global layout end ##########
+aside {
+    @include flex-display (flex, column, wrap, inherit, center);
+}
+
+.footer-inner {
+    @include flex-display (flex, column, nowrap, space-between, center);
+}
+
+// ########## Layout end ##########
 
 // ########## Utility classes ##########
+
 .bg-image {
     width: 100%;
     height: 100%;
@@ -76,13 +132,8 @@ header, footer, aside, nav ul, .sec-onecol, .sec-twocol {
 // ########## Utility end ##########
 
 // ########## Header ##########
-header {
-    align-items: center;
-}
-
 nav {
     ul {
-        padding-left: 0;
         li {
             list-style: none;
         }
@@ -97,34 +148,26 @@ nav {
 
 // ########## Main ##########
 
-.sec-onecol {
-    align-items: center;
-    text-align: center;
-}
-
-.sec-twocol {
-    justify-content: center;
-
-    article {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-.sec-fourcol {
-    grid-template-columns: 1fr;
-    align-items: center;
+.page-hero {
+    position: relative;
+    overflow: hidden;
 }
 
 .service {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    i {
+        order: -1;
+    }
+
 }
 
+// ########## Main end ##########
+
 // ########## Footer ##########
-footer {
+.footer-inner {
     p {
         flex-grow: 2;
         text-align: center;
@@ -136,25 +179,37 @@ $breakpoint-tablet: 760px;
 $breakpoint-small-laptop: 991px;
 
 @media only screen and (min-width: $breakpoint-tablet) {
-    header, footer {
+    header {
         flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
     }
+
     nav {
         ul {
             flex-direction: row;
         }
     }
-    
-    .sec-twocol {
+
+    .sec-onerow {
         flex-direction: row;
 
         article {
-            justify-content: center;
+            align-items: start;
             text-align: left;
             order: 2;
         }
+    }
+    .sec-twocol {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-hero {
+        article {
+            grid-column: 2;
+        }
+    }
+
+    .page-hero-content {
+        order: 2;
     }
 
     .sec-fourcol {
@@ -163,6 +218,10 @@ $breakpoint-small-laptop: 991px;
             text-align: center;
         }
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-inner {
+        flex-direction: row;
     }
 }
 
