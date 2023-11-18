@@ -2,11 +2,12 @@
 <html lang="no">
     <head>
         <meta charset="UTF-8">
-        <meta viewport="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Company name">
         <script src="https://kit.fontawesome.com/8aebfcef07.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/styles.css" type="text/css">
         <title>About our company</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     </head>
     <body>
         <header>
@@ -18,6 +19,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="about.html#contact">Contact</a></li>
                 </ul>
+            </nav>
         </header>
         <main>
             <section class="page-hero">
@@ -29,7 +31,10 @@
                         <a href="#sec-contact">Get in touch with us</a>
                     </article>
                 </div>
-                <img src="img/pexels-negative-space-34088.jpg" alt="" class="bg-image">
+                <picture>
+                    <source srcset="img/x1280/pexels-negative-space-1280.jpg" media="(min-width: 768px)">
+                    <img src="img/pexels-negative-space.jpg" alt="" class="bg-image">
+                </picture>
             </section>
             <section id="services" class="content-wrapper sec-fourcol">
                 <h2>Our services</h2>
@@ -80,7 +85,7 @@
                     <a href="mailto:postmottak@hiof.no"><i class="fa-solid fa-envelope"></i>postmottak@hiof.no</a>
                 </article>
             </section>
-            <section id="maps bg-light">
+            <section id="maps" class="bg-light">
 
             </section>
         </main>

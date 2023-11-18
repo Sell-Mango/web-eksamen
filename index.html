@@ -2,11 +2,12 @@
 <html lang="no">
     <head>
         <meta charset="UTF-8">
-        <meta viewport="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Company name">
         <script src="https://kit.fontawesome.com/8aebfcef07.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/styles.css" type="text/css">
         <title>Company name</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     </head>
     <body>
         <header>
@@ -18,6 +19,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="about.html#contact" class="btn-primary">Contact</a></li>
                 </ul>
+            </nav>
         </header>
         <main>
             <section id="hero" class="sec-onecol">
@@ -26,8 +28,11 @@
                 <a href="#services" class="btn-primary btn-m">Read more about out services</a>
                 <video autoplay muted loop class="hero-video">
                     <source src="video/mountains.mp4" type="video/mp4">
-                  </video>
-                <img src="img/pexels-negative-space-34088.jpg" alt="" class="bg-image">
+                </video>
+                <picture>
+                    <source srcset="img/x1280/pexels-negative-space-1280.jpg" media="(min-width: 768px)">
+                    <img src="img/pexels-negative-space.jpg" alt="" class="bg-image">
+                </picture>
             </section>
             <section class="sec-onecol">
                 <h2>Engaging subheading. What can you help your visitors with</h2>
@@ -72,6 +77,7 @@
             <form>
                 <input type="email" placeholder="Email">
                 <input type="submit" value="Sign me up">
+            </form>
         </aside>
         <footer class="bg-light">
             <div class="footer-inner">

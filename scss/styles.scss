@@ -9,6 +9,10 @@ body {
 
 main { overflow: hidden; }
 
+// ########## Breakpoints ##########
+$breakpoint-tablet: 768px;
+$breakpoint-small-laptop: 991px;
+
 //Colorpalette
 $primary: #fff;
 $secondary: #252525;
@@ -311,9 +315,6 @@ nav {
 }
 
 // ########## Media Queries ##########
-$breakpoint-tablet: 760px;
-$breakpoint-small-laptop: 991px;
-
 @media only screen and (min-width: $breakpoint-tablet) {
     header {
         flex-direction: row;
