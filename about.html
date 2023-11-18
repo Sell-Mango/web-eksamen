@@ -11,24 +11,24 @@
     </head>
     <body>
         <header>
-            <a href="index.html"><img src="img/logo1.png" alt=""></a>
+            <a href="index.html" class="logo"><img src="img/logo1.png" alt=""></a>
             <nav>
-                <ul>
+                <ul class="text-s">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="about.html#contact">Contact</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="about.html#contact" class="btn-primary btn-m">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <section class="page-hero">
                 <div class="content-wrapper sec-twocol">
-                    <article class="page-hero-content">
-                        <h2>Company name</h2>
-                        <h1>About our company</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta. Aenean est dolor, bibendum vitae vestibulum finibus, porttitor a eros. Fusce vitae lectus aliquam justo rutrum suscipit. Quisque egestas risus urna, quis auctor tortor rhoncus eget. </p>
-                        <a href="#sec-contact">Get in touch with us</a>
+                    <article class="page-hero-content l-overlay">
+                        <h1 class="heading-s">About our company</h1>
+                        <h2 class="text-m">Company name</h2>
+                        <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta. Aenean est dolor, bibendum vitae vestibulum finibus, porttitor a eros. Fusce vitae lectus aliquam justo rutrum suscipit. Quisque egestas risus urna, quis auctor tortor rhoncus eget. </p>
+                        <a href="#sec-contact" class="btn-primary btn-m">Get in touch with us</a>
                     </article>
                 </div>
                 <picture>
@@ -37,65 +37,67 @@
                 </picture>
             </section>
             <section id="services" class="content-wrapper sec-fourcol">
-                <h2>Our services</h2>
+                <h2 class="heading-m">Our services</h2>
                 <article class="service">
-                    <h3>Branding</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-users"></i>
+                    <h3 class="heading-s">Branding</h3>
+                    <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <i class="fa-solid fa-users icon-m"></i>
                 </article>
                 <article class="service">
-                    <h3>Branding</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <h3 class="heading-s">Branding</h3>
+                    <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <i class="fa-solid fa-cloud-arrow-up icon-m"></i>
                 </article>
                 <article class="service">
-                    <h3>Branding</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-code"></i>
+                    <h3 class="heading-s">Branding</h3>
+                    <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <i class="fa-solid fa-code icon-m"></i>
                 </article>
                 <article class="service">
-                    <h3>Branding</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-wifi"></i>
+                    <h3 class="heading-s">Branding</h3>
+                    <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <i class="fa-solid fa-wifi icon-m"></i>
                 </article>
             </section>
-            <section class="sec-onerow bg-light">
-                <h2>Some of our clients</h2>
+            <section class="sec-onerow bg-yellow">
+                <h2 class="heading-m">Some of our clients</h2>
                 <img src="img/logo1.png" alt="">
                 <img src="img/logo2.png" alt="">
                 <img src="img/logo2.png" alt="">
             </section>
-            <section id="contact" class="sec-twocol content-wrapper">
-                <h2>Contact us</h2>
-                <form>
-                    <h3>Send us a message</h3>
-                    <label for="c-name">Name</label>
-                    <input type="text" id="c-name" placeholder="Name">
-                    <label for="c-subject">Email</label>
-                    <input type="text" id="c-subject" placeholder="Something">
-                    <label for="c-message">Message</label>
-                    <textarea id="c-message" placeholder="Message"></textarea>
-                    <input type="submit" value="Send message">
-                </form>
-                <article>
-                    <h3>Contact information</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus.</p>
-                    <address><i class="fa-solid fa-location-pin"></i>B.R.A Veien 4, 1757 Halden</address>
-                    <a href="tel:12345678"><i class="fa-solid fa-phone"></i>12345678</a>
-                    <a href="mailto:postmottak@hiof.no"><i class="fa-solid fa-envelope"></i>postmottak@hiof.no</a>
-                </article>
+            <section id="contact" class="bg-light">
+                <div class="sec-twocol content-wrapper">
+                    <h2 class="heading-m">Contact us</h2>
+                    <form>
+                        <h3 class="heading-s">Send us a message</h3>
+                        <label for="c-name">Name</label>
+                        <input type="text" id="c-name" placeholder="Name">
+                        <label for="c-subject">Email</label>
+                        <input type="text" id="c-subject" placeholder="Something">
+                        <label for="c-message">Message</label>
+                        <textarea id="c-message" placeholder="Message"></textarea>
+                        <input type="submit" value="Send message" class="btn-m btn-primary">
+                    </form>
+                    <article>
+                        <h3 class="heading-s">Contact information</h3>
+                        <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus.</p>
+                        <address class="adr text-m"><i class="fa-solid fa-location-pin"></i>B.R.A Veien 4, 1757 Halden</address>
+                        <a href="tel:12345678" class="adr text-m"><i class="fa-solid fa-phone"></i>12345678</a>
+                        <a href="mailto:postmottak@hiof.no" class="adr text-m"><i class="fa-solid fa-envelope"></i>postmottak@hiof.no</a>
+                    </article>
+                </div>
             </section>
             <section id="maps" class="bg-light">
 
             </section>
         </main>
-        <footer class="bg-light">
+        <footer class="bg-dark">
             <div class="footer-inner">
                 <a href="index.html"><img src="img/logo1.png" alt=""></a>
-                <p>Company copyright 2023</p>
-                <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <p class="text-s">Company © 2023</p>
+                <a href="https://facebook.com" class="icon-s"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://instagram.com" class="icon-s"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://linkedin.no" class="icon-s"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </footer>
     </body>

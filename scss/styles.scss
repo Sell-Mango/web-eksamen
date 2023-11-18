@@ -1,33 +1,209 @@
-// ########## Global ##########
-body {
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
-    font-family: 'Raleway', sans-serif;
+//########## Global ##########
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+* {
     margin: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
+    padding: 0; 
 }
 
-main { overflow: hidden; }
-
-// ########## Breakpoints ##########
-$breakpoint-tablet: 768px;
-$breakpoint-small-laptop: 991px;
+html { 
+    font-size: 62.5%;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+ }
 
 //Colorpalette
 $primary: #fff;
 $secondary: #252525;
 $tertiary: #e6bd43;
 $black: #000;
+$l-overlay: rgba(255, 255, 255, 0.6);
+
+//Font sizes
+$heading-l: clamp(2.9rem, 2.85vw + 1.81rem, 4.64rem);
+$heading-m: clamp(2.15rem, 1.34vw + 1.65rem, 2.97rem);
+$heading-s: clamp(1.86rem, 0.85vw + 1.53rem, 2.38rem);
+$heading-xs: clamp(1.6rem, 0.49vw + 1.41rem, 1.9rem);
+
+$text-l: clamp(1.6rem, calc(1.6rem + ((1vw - 0.4rem) * 0.3333)), 1.8rem);
+$text-m: clamp(1.4rem, calc(1.4rem + ((1vw - 0.4rem) * 0.3333)), 1.6rem);
+
+//Breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-small-laptop: 991px;
 
 //Spacing
-$document-width: 1600px;
-$document-inner-width: 1300px;
-$document-space: 20px;
+$document-padding: 2rem;
+$document-width: 160rem;
+$document-item-padding: clamp(4.88rem, calc(13.76vw + 0.48rem), 19.74rem);
+$document-content-padding: clamp(3.91rem, calc(8.57vw + 1.16rem), 13.16rem);
+
+$space-s: clamp(1.02rem, calc(0.12vw + 0.98rem), 1.16rem);
+$space-m: clamp(1.28rem, calc(0.42vw + 1.15rem), 1.73rem);
+$space-l: clamp(2.5rem, calc(3.1vw + 1.51rem), 5.85rem);
 
 
-// ########## Global end ##########
+//Padding sides
+section, footer, aside {
+    padding-left: $document-padding;
+    padding-right: $document-padding;
+}
 
-// ########## Global layout ##########
+//Document width
+header, .footer-inner, .content-wrapper {
+    max-width: $document-width;
+}
+
+//content width
+
+//Item width
+.item-width { 
+    padding-left: $document-item-padding;
+    padding-right: $document-item-padding;
+ }
+
+/*
+--space-4xs: clamp(0.52rem, calc(-0.03vw + 0.53rem), 0.49rem);
+--space-3xs: clamp(0.66rem, calc(0.04vw + 0.64rem), 0.7rem);
+--space-2xs: clamp(0.82rem, calc(0.16vw + 0.77rem), 0.99rem);
+--space-xs: clamp(1.02rem, calc(0.35vw + 0.91rem), 1.4rem);
+--space-s: clamp(1.28rem, calc(0.65vw + 1.07rem), 1.98rem);
+--space-m: clamp(1.6rem, calc(1.11vw + 1.24rem), 2.8rem);
+--space-l: clamp(2rem, calc(1.81vw + 1.42rem), 3.96rem);
+--space-xl: clamp(2.5rem, calc(2.87vw + 1.58rem), 5.6rem);
+--space-2xl: clamp(3.13rem, calc(4.44vw + 1.71rem), 7.92rem);
+--space-3xl: clamp(3.91rem, calc(6.75vw + 1.75rem), 11.19rem);
+--space-4xl: clamp(4.88rem, calc(10.13vw + 1.64rem), 15.83rem);
+
+
+
+    --space-4xs: clamp(0.52rem, calc(-0.17vw + 0.58rem), 0.34rem);
+    --space-3xs: clamp(0.66rem, calc(-0.13vw + 0.7rem), 0.51rem);
+    --space-2xs: clamp(0.82rem, calc(-0.05vw + 0.83rem), 0.77rem);
+    --space-xs: clamp(1.02rem, calc(0.12vw + 0.98rem), 1.16rem);
+    --space-s: clamp(1.28rem, calc(0.42vw + 1.15rem), 1.73rem);
+    --space-m: clamp(1.6rem, calc(0.93vw + 1.3rem), 2.6rem);
+    --space-l: clamp(2rem, calc(1.76vw + 1.44rem), 3.9rem);
+    --space-xl: clamp(2.5rem, calc(3.1vw + 1.51rem), 5.85rem);
+    --space-2xl: clamp(3.13rem, calc(5.23vw + 1.45rem), 8.78rem);
+    --space-3xl: clamp(3.91rem, calc(8.57vw + 1.16rem), 13.16rem);
+    --space-4xl: clamp(4.88rem, calc(13.76vw + 0.48rem), 19.74rem);
+
+*/
+//center columns
+header, .content-wrapper, .footer-inner { margin: auto; }
+
+//########## Global end ##########
+
+// ########## Utility classes ##########
+
+//Colors
+.bg-light { background-color: #ededed; }
+.bg-yellow { background-color: $tertiary; }
+.bg-dark { background-color: $secondary; }
+.l-overlay { background-color: $l-overlay; }
+
+//headings
+.heading-l { 
+    font-size: $heading-l;
+    font-weight: 700;
+ }
+.heading-m { 
+    font-size: $heading-m;
+    font-weight: 700;
+ }
+.heading-s { 
+    font-size: $heading-s;
+    font-weight: 700;
+ }
+ .heading-xs {
+    font-size: $heading-xs;
+    font-weight: 700;
+ }
+
+ .text-l {
+     font-size: $text-l;
+     font-weight: 500;
+ }
+
+ .text-m {
+    font-size: $text-l;
+    font-weight: 400;
+ }
+
+ .text-s {
+    font-size: $text-m;
+    font-weight: 400;
+ }
+
+//Buttons
+@mixin button-style($color, $background, $border, $hover-color, $hover-background, $transition) {
+    color: $color;
+    background-color: $background;
+    border: $border;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover, &:focus {
+        background-color: $hover-color;
+        color: $hover-background;
+    }
+}
+
+@mixin button-size($padding, $font-size, $weight) {
+    padding: $padding;
+    font-size: $font-size;
+    font-weight: $weight;
+}
+
+.btn-primary {
+    @include button-style($secondary, $tertiary, none, $secondary, $tertiary, 0.3s);
+
+    text-decoration: none;
+}
+
+.btn-secondary {
+    @include button-style($secondary, none, 2px solid $secondary, $secondary, $primary, 0.3s);
+
+    text-decoration: none;
+}
+
+.btn-m {
+    @include button-size(10px 15px, $text-m, 700);
+}
+
+.btn-l {
+    @include button-size(10px 15px, $text-l, 700);
+}
+
+.btn-s {
+    @include button-size(5px 10px, $text-m, 400);
+}
+
+//Icons
+.icon-s { font-size: $heading-s; }
+.icon-m { font-size: $heading-m; }
+
+.bg-image, .hero-video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.active {
+    font-weight: 700;
+    border-bottom: 2px solid $tertiary;
+}
+
+// ########## Utility end ##########
+
+//########## Global layout ##########
 @mixin flex-display ($display, $direction, $wrap, $justify, $align) {
     display: $display;
     flex-direction: $direction;
@@ -42,29 +218,10 @@ $document-space: 20px;
     grid-template-rows: $rows;
 }
 
-// Document max width
-header, .footer-inner {
-    max-width: $document-width;
-}
-
-// Document inner width 
-.content-wrapper {
-    max-width: $document-inner-width;
-}
-
-//center max width
-header, .content-wrapper, .footer-inner {
-    margin: auto;
-}
-
-//Document spacing
-header, footer, aside, .sec-onecol, .sec-onerow, .sec-twocol, .sec-fourcol {
-    padding-left: $document-space;
-    padding-right: $document-space;
-}
-
 header {
     @include flex-display (flex, column, wrap, space-between, center);
+    
+    padding: $space-s $document-padding;
 }
 
 ul {
@@ -73,11 +230,16 @@ ul {
     padding-left: 0;
 }
 
-.sec-onecol {
-    @include flex-display (flex, column, wrap, inherit, center);
+section {
+    padding-top: $space-l;
+    padding-bottom: $space-l;
+}
 
-    align-items: center;
+.sec-onecol {
+    @include flex-display (flex, column, nowrap, center, center);
+
     text-align: center;
+    gap: $space-m;
 }
 
 .sec-onerow {
@@ -99,7 +261,7 @@ ul {
 .sec-twocol {
     @include grid-display (grid, 1fr, auto);
 
-    :first-child {
+    > h2 {
         grid-column: 1 / -1;
         text-align: center;
     }
@@ -126,66 +288,13 @@ aside {
     @include flex-display (flex, column, nowrap, space-between, center);
 }
 
+.content-wrapper {
+    @include flex-display (flex, column, wrap, inherit, center);
+
+    gap: $space-m;
+}
+
 // ########## Layout end ##########
-
-// ########## Utility classes ##########
-
-.bg-image, .hero-video {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.hero-video {
-    display: none;
-}
-
-.bg-light {
-    background-color: #ededed;
-}
-
-.active {
-    font-weight: 600;
-    border-bottom: 2px solid $tertiary;
-}
-
-@mixin button-style($color, $background, $border, $hover-color, $hover-background, $transition) {
-    color: $color;
-    background-color: $background;
-    border: $border;
-    cursor: pointer;
-    transition: $transition;
-
-    &:hover, &:focus {
-        background-color: $hover-color;
-        color: $hover-background;
-    }
-
-}
-
-@mixin button-size($padding, $font-size, $weight) {
-    padding: $padding;
-    font-size: $font-size;
-    font-weight: $weight;
-}
-
-.btn-primary {
-    @include button-style($secondary, $tertiary, none, $secondary, $tertiary, 0.3s);
-
-    text-decoration: none;
-}
-
-.btn-m {
-    @include button-size(10px 15px, 15px, 600);
-
-}
-
-// ########## Utility end ##########
 
 // ########## Header ##########
 .logo {
@@ -194,13 +303,14 @@ aside {
         width: 100%;
     }
 }
+
 nav {
 
     ul {
 
         li {
             list-style: none;
-            padding: 1rem 1rem;
+            padding: $space-s $space-s;
         }
 
         :not(:last-child) a::after {
@@ -222,25 +332,48 @@ nav {
                 opacity: 1;
             }
         }
-
-        :last-child > * {
-            @include button-size(15px 20px, inherit);
-        } 
     }
 
 }
-
 // ########## Header end ##########
 
 // ########## Main ##########
-
 #hero {
     position: relative;
+
+    h1, p, a {
+        z-index: 5;
+    }
 }
+
+#hero::before {
+    content: '';
+    position: absolute;
+    background-color: $l-overlay;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-video {
+    display: none;
+    background-color: $secondary;
+}
+
+//https://stackoverflow.com/questions/16823636/overlaying-a-div-on-top-of-html-5-video
 
 .page-hero {
     position: relative;
     overflow: hidden;
+}
+
+.page-hero-content {
+    @include flex-display (flex, column, wrap, inherit, start);
+
+    h2 {
+        order: -1;
+    }
 }
 
 .service {
@@ -256,22 +389,43 @@ nav {
 .portfolio-row {
     @include flex-display (flex, row, wrap, center, center);
 
-    :first-child {
+    h2 {
         width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 2px solid $tertiary;
     }
-    padding-left: $document-space;
-    padding-right: $document-space;
 }
 
 .portfolio-card {
     @include flex-display (flex, column, wrap, center, start);
+    text-decoration: none;
+    color: $secondary;
     flex-grow: 1;
     max-width: 629px;
     text-align: left;
+    transition: .2s;
 
     img {
         order: -1;
         width: 100%;
+    }
+
+    &:hover, &:focus {
+        transform: scale(1.04);
+    }
+}
+
+form {
+
+    input, textarea {
+        //width: 100%;
+        //padding: 10px;
+        //margin: 10px 0;
+        border: none;
+        //border-radius: 4px;
+        box-sizing: border-box;
+        font-size: $text-m;
+        font-family: 'Arial', sans-serif;
     }
 }
 
@@ -279,21 +433,14 @@ nav {
     form {
         @include flex-display (flex, column, wrap, inherit, start);
 
-        /*input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
+        input, textarea {
+           // width: 100%;
+         //   padding: 10px;
+          //  margin: 10px 0;
+          //  border: 1px solid #ccc;
+           // border-radius: 4px;
+           // box-sizing: border-box;
         }
-
-        input[type=submit] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        } */
     }
 
     article {
@@ -303,6 +450,10 @@ nav {
     }
 }
 
+.adr {
+    text-decoration: none;
+    color: $secondary;
+}
 
 // ########## Main end ##########
 
@@ -311,6 +462,10 @@ nav {
     p {
         flex-grow: 2;
         text-align: center;
+        color: $primary;
+    }
+    .icon-s {
+        color: $primary;
     }
 }
 
