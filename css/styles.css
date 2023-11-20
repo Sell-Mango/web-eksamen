@@ -235,6 +235,7 @@ section, aside {
   grid-template-rows: auto;
   justify-content: center;
   gap: none;
+  max-width: 130rem;
 }
 .twocol > h2 {
   grid-column: 1/-1;
@@ -450,6 +451,7 @@ ul a:hover::after, ul a:focus::after {
 }
 
 #clients {
+  max-width: 100%;
   text-align: center;
 }
 #clients img {
