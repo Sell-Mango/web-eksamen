@@ -6,7 +6,15 @@
         <meta name="description" content="Company name">
         <script src="https://kit.fontawesome.com/8aebfcef07.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/styles.css" type="text/css">
-        <title>About our company</title>
+    
+        <!-- Opengraph metadata -->
+        <meta property="og:url" content="https://itstud.hiof.no/~kjellmal/webutvikling/webeksamen/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Firstshoes - Billige sko hele året">
+        <meta property="og:description" content="Firstshoes er ledende for billige sko til hele familien i alle årstider. Gratis levering og 60 dagers åpent kjøp. Bli medlem og få tilbud på vintersko.">
+        <meta property="og:image" content="https://itstud.hiof.no/~kjellmal/webutvikling/webeksamen/img/x1280/pexels-negative-space-1280.jpg">
+
+        <title>Company name</title>
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     </head>
     <body>
@@ -22,8 +30,9 @@
             </nav>
         </header>
         <main>
+            <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
             <section class="page-hero">
-                <div class="content-wrapper twocol">
+                <div class="content-center twocol">
                     <article class="page-hero-content l-overlay">
                         <h1 class="heading-s">About our company</h1>
                         <h2 class="text-m">Company name</h2>
@@ -36,7 +45,7 @@
                     <img src="img/pexels-negative-space.jpg" alt="" class="bg-image">
                 </picture>
             </section>
-            <section id="services" class="content-wrapper fourcol">
+            <section id="services" class="content-center fourcol">
                 <h2 class="heading-m">Our services</h2>
                 <article class="service">
                     <h3 class="heading-s">Branding</h3>
@@ -59,7 +68,7 @@
                     <i class="fa-solid fa-wifi icon-m"></i>
                 </article>
             </section>
-            <section class="row-wrap bg-yellow">
+            <section id="clients" class="row-wrap bg-yellow">
                 <h2 class="heading-m">Some of our clients</h2>
                 <img src="img/logo1.png" alt="">
                 <img src="img/logo2.png" alt="">
@@ -70,11 +79,11 @@
                     <h2 class="heading-m">Contact us</h2>
                     <form>
                         <h3 class="heading-s">Send us a message</h3>
-                        <label for="c-name">Name</label>
-                        <input type="text" id="c-name" placeholder="Name">
-                        <label for="c-subject">Email</label>
+                        <label for="c-name" class="text-s">Name</label>
+                        <input type="text" id="c-name" placeholder="Ola Normann">
+                        <label for="c-subject" class="text-s">Email</label>
                         <input type="text" id="c-subject" placeholder="Something">
-                        <label for="c-message">Message</label>
+                        <label for="c-message" class="text-s">Message</label>
                         <textarea id="c-message" placeholder="Message"></textarea>
                         <input type="submit" value="Send message" class="btn-m btn-primary">
                     </form>
@@ -100,5 +109,41 @@
                 <a href="https://linkedin.no" class="icon-s"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </footer>
+
+        <!-- Google maps scrips. Kode fra Google sin dokumentasjon om å embedde Google maps på en webside: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key-->
+        <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyCvBaWq_SZ4NXXNMQ6eBm1w2xP-mi4FFVM", v: "weekly"});</script>
+        
+        <script>
+            // Kode fra Google sin dokumentasjon om hvordan embedde Google Maps på en webside: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
+            // Initialize and add the map
+            let map;
+
+            async function initMap() {
+            // The location of Høgskolen i Østfold, Halden
+            const position = { lat: 59.12934101633533, lng: 11.353586517141622 };
+            // Request needed libraries.
+            //@ts-ignore
+            const { Map } = await google.maps.importLibrary("maps");
+            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+            // The map, centered at Uluru
+            map = new Map(document.getElementById("maps"), {
+                zoom: 13,
+                center: position,
+                mapId: "DEMO_MAP_ID",
+            });
+
+            // The marker, positioned at Høgskolen i Østfold, Remmen
+            const marker = new AdvancedMarkerElement({
+                map: map,
+                position: position,
+                title: "Remmen",
+            });
+            }
+
+            initMap();
+        </script>
+        <script src="js/script.js"></script>
     </body>
 </html>

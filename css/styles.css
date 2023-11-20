@@ -9,6 +9,7 @@ html {
   font-family: "Raleway", sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .bg-light {
@@ -111,11 +112,11 @@ html {
 }
 
 .icon-s {
-  font-size: clamp(1.86rem, 0.85vw + 1.53rem, 2.38rem);
+  font-size: 2.5rem;
 }
 
 .icon-m {
-  font-size: clamp(2.15rem, 1.34vw + 1.65rem, 2.97rem);
+  font-size: 3.2rem;
 }
 
 .bg-image, .hero-video {
@@ -165,7 +166,7 @@ aside {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: inherit;
+  justify-content: center;
   align-items: center;
   gap: clamp(1.28rem, 0.42vw + 1.15rem, 1.73rem);
 }
@@ -222,7 +223,7 @@ section, aside {
   gap: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
   padding-left: none;
   padding-right: none;
-  max-width: 160rem;
+  max-width: 130rem;
 }
 .row-wrap h2 {
   width: 100%;
@@ -305,6 +306,33 @@ ul a:hover::after, ul a:focus::after {
   background-color: #252525;
 }
 
+#toTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #252525;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: 0.25s;
+}
+@media only screen and (min-width: 991px) {
+  #toTop:hover {
+    transform: scale(1.05);
+  }
+}
+
+#portfolio .page-hero {
+  padding-top: clamp(3.6rem, 9.22vw + 0.65rem, 13.57rem);
+  padding-bottom: clamp(3.6rem, 9.22vw + 0.65rem, 13.57rem);
+}
+
 .page-hero {
   position: relative;
   overflow: hidden;
@@ -318,6 +346,7 @@ ul a:hover::after, ul a:focus::after {
   justify-content: inherit;
   align-items: start;
   gap: clamp(1.28rem, 0.42vw + 1.15rem, 1.73rem);
+  text-align: left;
   padding: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
 }
 .page-hero-content h2 {
@@ -356,7 +385,7 @@ ul a:hover::after, ul a:focus::after {
   justify-content: start;
   align-items: center;
   gap: clamp(1.28rem, 0.42vw + 1.15rem, 1.73rem);
-  max-width: 160rem;
+  max-width: 130rem;
 }
 .portfolio-tags h2 {
   width: 100%;
@@ -397,6 +426,13 @@ ul a:hover::after, ul a:focus::after {
   }
 }
 
+#clients {
+  text-align: center;
+}
+#clients img {
+  max-width: 10rem;
+}
+
 form {
   box-sizing: border-box;
 }
@@ -421,9 +457,9 @@ form input[type=submit] {
   flex-wrap: wrap;
   justify-content: start;
   align-items: start;
-  gap: clamp(1.28rem, 0.42vw + 1.15rem, 1.73rem);
+  gap: clamp(1.02rem, 0.12vw + 0.98rem, 1.16rem);
 }
-#contact form input, #contact form textarea {
+#contact form input[type=text], #contact form input[type=email], #contact form textarea {
   width: 100%;
   box-sizing: border-box;
 }
@@ -431,26 +467,38 @@ form input[type=submit] {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
   align-items: start;
   gap: clamp(1.28rem, 0.42vw + 1.15rem, 1.73rem);
   text-align: left;
 }
 
 .adr {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: start;
+  gap: clamp(1.02rem, 0.12vw + 0.98rem, 1.16rem);
   text-decoration: none;
   color: #252525;
 }
 
+#maps {
+  padding-top: clamp(3.6rem, 9.22vw + 0.65rem, 13.57rem);
+  padding-bottom: clamp(3.6rem, 9.22vw + 0.65rem, 13.57rem);
+}
+
 #footer-inner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: clamp(1.02rem, 0.12vw + 0.98rem, 1.16rem);
+  gap: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
 }
 #footer-inner p {
+  width: 100%;
   flex-grow: 2;
   text-align: center;
   color: #fff;
@@ -489,11 +537,17 @@ form input[type=submit] {
   .page-hero-content {
     grid-column: 2;
   }
-  .row-wrap {
+  #footer-inner {
+    flex-direction: row;
+  }
+  #branding, #design, #development {
     justify-content: start;
   }
   #footer-inner {
-    flex-direction: row;
+    gap: clamp(1.02rem, 0.12vw + 0.98rem, 1.16rem);
+  }
+  #footer-inner p {
+    width: inherit;
   }
 }
 @media only screen and (min-width: 991px) {
