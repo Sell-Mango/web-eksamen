@@ -29,70 +29,21 @@ $heading-xs: clamp(1.6rem, 0.49vw + 1.41rem, 1.9rem);
 $text-l: clamp(1.6rem, calc(1.6rem + ((1vw - 0.4rem) * 0.3333)), 1.8rem);
 $text-m: clamp(1.4rem, calc(1.4rem + ((1vw - 0.4rem) * 0.3333)), 1.6rem);
 
+//Spacing
+$space-xs: clamp(1.02rem, calc(0.12vw + 0.98rem), 1.16rem);
+$space-s: clamp(1.28rem, calc(0.42vw + 1.15rem), 1.73rem);
+$space-m: clamp(2rem, calc(1.81vw + 1.42rem), 3.96rem);
+$space-l: clamp(2.5rem, calc(3.1vw + 1.51rem), 5.85rem);
+$space-xl: clamp(3.13rem, calc(5.23vw + 1.45rem), 8.78rem);
+$space-2xl: clamp(3.6rem, calc(9.22vw + 0.65rem), 13.57rem);
+//$space-3xl: clamp(3.91rem, calc(8.57vw + 1.16rem), 13.16rem);
+
+$document-padding: 2rem;
+$document-width: 160rem;
+
 //Breakpoints
 $breakpoint-tablet: 768px;
 $breakpoint-small-laptop: 991px;
-
-//Spacing
-$document-padding: 2rem;
-$document-width: 160rem;
-$document-item-padding: clamp(4.88rem, calc(13.76vw + 0.48rem), 19.74rem);
-$document-content-padding: clamp(3.91rem, calc(8.57vw + 1.16rem), 13.16rem);
-
-$space-s: clamp(1.02rem, calc(0.12vw + 0.98rem), 1.16rem);
-$space-m: clamp(1.28rem, calc(0.42vw + 1.15rem), 1.73rem);
-$space-l: clamp(2.5rem, calc(3.1vw + 1.51rem), 5.85rem);
-
-
-//Padding sides
-section, footer, aside {
-    padding-left: $document-padding;
-    padding-right: $document-padding;
-}
-
-//Document width
-header, .footer-inner, .content-wrapper {
-    max-width: $document-width;
-}
-
-//content width
-
-//Item width
-.item-width { 
-    padding-left: $document-item-padding;
-    padding-right: $document-item-padding;
- }
-
-/*
---space-4xs: clamp(0.52rem, calc(-0.03vw + 0.53rem), 0.49rem);
---space-3xs: clamp(0.66rem, calc(0.04vw + 0.64rem), 0.7rem);
---space-2xs: clamp(0.82rem, calc(0.16vw + 0.77rem), 0.99rem);
---space-xs: clamp(1.02rem, calc(0.35vw + 0.91rem), 1.4rem);
---space-s: clamp(1.28rem, calc(0.65vw + 1.07rem), 1.98rem);
---space-m: clamp(1.6rem, calc(1.11vw + 1.24rem), 2.8rem);
---space-l: clamp(2rem, calc(1.81vw + 1.42rem), 3.96rem);
---space-xl: clamp(2.5rem, calc(2.87vw + 1.58rem), 5.6rem);
---space-2xl: clamp(3.13rem, calc(4.44vw + 1.71rem), 7.92rem);
---space-3xl: clamp(3.91rem, calc(6.75vw + 1.75rem), 11.19rem);
---space-4xl: clamp(4.88rem, calc(10.13vw + 1.64rem), 15.83rem);
-
-
-
-    --space-4xs: clamp(0.52rem, calc(-0.17vw + 0.58rem), 0.34rem);
-    --space-3xs: clamp(0.66rem, calc(-0.13vw + 0.7rem), 0.51rem);
-    --space-2xs: clamp(0.82rem, calc(-0.05vw + 0.83rem), 0.77rem);
-    --space-xs: clamp(1.02rem, calc(0.12vw + 0.98rem), 1.16rem);
-    --space-s: clamp(1.28rem, calc(0.42vw + 1.15rem), 1.73rem);
-    --space-m: clamp(1.6rem, calc(0.93vw + 1.3rem), 2.6rem);
-    --space-l: clamp(2rem, calc(1.76vw + 1.44rem), 3.9rem);
-    --space-xl: clamp(2.5rem, calc(3.1vw + 1.51rem), 5.85rem);
-    --space-2xl: clamp(3.13rem, calc(5.23vw + 1.45rem), 8.78rem);
-    --space-3xl: clamp(3.91rem, calc(8.57vw + 1.16rem), 13.16rem);
-    --space-4xl: clamp(4.88rem, calc(13.76vw + 0.48rem), 19.74rem);
-
-*/
-//center columns
-header, .content-wrapper, .footer-inner { margin: auto; }
 
 //########## Global end ##########
 
@@ -121,17 +72,14 @@ header, .content-wrapper, .footer-inner { margin: auto; }
     font-size: $heading-xs;
     font-weight: 700;
  }
-
  .text-l {
      font-size: $text-l;
      font-weight: 500;
  }
-
  .text-m {
     font-size: $text-l;
     font-weight: 400;
  }
-
  .text-s {
     font-size: $text-m;
     font-weight: 400;
@@ -145,9 +93,11 @@ header, .content-wrapper, .footer-inner { margin: auto; }
     cursor: pointer;
     transition: $transition;
 
-    &:hover, &:focus {
-        background-color: $hover-color;
-        color: $hover-background;
+    @media only screen and (min-width: $breakpoint-small-laptop) {
+        &:hover, &:focus {
+            background-color: $hover-color;
+            color: $hover-background;
+        }
     }
 }
 
@@ -169,17 +119,9 @@ header, .content-wrapper, .footer-inner { margin: auto; }
     text-decoration: none;
 }
 
-.btn-m {
-    @include button-size(10px 15px, $text-m, 700);
-}
-
-.btn-l {
-    @include button-size(10px 15px, $text-l, 700);
-}
-
-.btn-s {
-    @include button-size(5px 10px, $text-m, 400);
-}
+.btn-m { @include button-size(1rem 1.5rem, $text-m, 700); }
+.btn-l { @include button-size(10px 15px, $text-l, 700); }
+.btn-s { @include button-size(5px 10px, $text-m, 400); }
 
 //Icons
 .icon-s { font-size: $heading-s; }
@@ -201,97 +143,101 @@ header, .content-wrapper, .footer-inner { margin: auto; }
     border-bottom: 2px solid $tertiary;
 }
 
+//center content
+.content-center { margin: auto; }
+
 // ########## Utility end ##########
 
 //########## Global layout ##########
-@mixin flex-display ($display, $direction, $wrap, $justify, $align) {
+@mixin flex-display ($display, $direction, $wrap, $justify, $align, $gap) {
     display: $display;
     flex-direction: $direction;
     flex-wrap: $wrap;
     justify-content: $justify;
     align-items: $align;
+    gap: $gap;
 }
 
-@mixin grid-display ($display, $columns, $rows) {
+@mixin grid-display ($display, $columns, $rows, $justify, $gap) {
     display: $display;
     grid-template-columns: $columns;
     grid-template-rows: $rows;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+@mixin content-width ($pad-left, $pad-right, $max-width) {
+    padding-left: $pad-left;
+    padding-right: $pad-right;
+    max-width: $max-width;
 }
 
 header {
-    @include flex-display (flex, column, wrap, space-between, center);
+    @include flex-display (flex, column, wrap, space-between, center, $space-s);
+    @include content-width($document-padding, $document-padding, 160rem);
     
-    padding: $space-s $document-padding;
+    padding-top: $space-m;
+    padding-bottom: $space-m;
+}
+
+footer {
+    @include content-width($document-padding, $document-padding, 100%);
+
+    padding-top: $space-m;
+    padding-bottom: $space-m;
+}
+
+aside {
+    @include flex-display (flex, column, wrap, inherit, center, $space-s);
 }
 
 ul {
-    @include flex-display (flex, column, nowrap, inherit, center);
+    @include flex-display (flex, column, nowrap, inherit, center, $space-m);
 
     padding-left: 0;
 }
 
-section {
-    padding-top: $space-l;
-    padding-bottom: $space-l;
+section, aside {
+    @include content-width($document-padding, $document-padding, 100%);
+
+    padding-top: $space-xl;
+    padding-bottom: $space-xl;
 }
 
-.sec-onecol {
-    @include flex-display (flex, column, nowrap, center, center);
+.onecol {
+    @include flex-display (flex, column, nowrap, center, center, $space-m);
+    @include content-width($space-2xl, $space-2xl, 70rem);
 
     text-align: center;
-    gap: $space-m;
 }
 
-.sec-onerow {
-    @include flex-display (flex, column, wrap, center, center);
-
-    position: relative;
-    > h2 { 
-        width: 100%;
-        text-align: center;
-     }
-
-    article {
-        @include flex-display(flex, column, wrap, inherit, center);
-        
-        text-align: center;
-    }
+.row-nowrap {
+    @include flex-display (flex, column, nowrap, start, center, $space-m);
+    @include content-width($space-2xl, $space-2xl, 130rem);
 }
 
-.sec-twocol {
-    @include grid-display (grid, 1fr, auto);
+.row-wrap { 
+    @include flex-display (flex, row, wrap, center, center, $space-m); 
+    @include content-width(none, none, 160rem);
+
+    h2 { width: 100%; }
+}
+
+.twocol {
+    @include grid-display (grid, 1fr, auto, center, none);
 
     > h2 {
         grid-column: 1 / -1;
         text-align: center;
     }
-
-    justify-content: center;
 }
 
-.sec-fourcol {
-    @include grid-display (grid, 1fr, auto);
+.fourcol {
+    @include grid-display (grid, 1fr, auto, space-between, $space-l);
+    @include content-width($space-xl, $space-xl, 130rem);
 
-    :first-child {
-        grid-column: 1 / -1;
-        text-align: center;
-    }
-    
+    h2 { grid-column: 1 / -1; }
     text-align: center;
-}
-
-aside {
-    @include flex-display (flex, column, wrap, inherit, center);
-}
-
-.footer-inner {
-    @include flex-display (flex, column, nowrap, space-between, center);
-}
-
-.content-wrapper {
-    @include flex-display (flex, column, wrap, inherit, center);
-
-    gap: $space-m;
 }
 
 // ########## Layout end ##########
@@ -299,42 +245,33 @@ aside {
 // ########## Header ##########
 .logo {
     width: 100px;
-    img {
+    img { width: 100%; }
+}
+
+ul {
+    li { list-style: none; }
+
+    :not(:last-child) a::after {
+        content: ' ';
+        display: block;
         width: 100%;
+        height: 2px;
+        background: $tertiary;
+        transition: .3s;
+        opacity: 0;
+    }
+
+    a { 
+        text-decoration: none;
+        font-weight: 400;
+        color: $secondary;
+
+        &:hover::after, &:focus::after {
+            opacity: 1;
+        }
     }
 }
 
-nav {
-
-    ul {
-
-        li {
-            list-style: none;
-            padding: $space-s $space-s;
-        }
-
-        :not(:last-child) a::after {
-            content: ' ';
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: $tertiary;
-            transition: .3s;
-            opacity: 0;
-        }
-
-        a { 
-            text-decoration: none;
-            font-weight: 400;
-            color: $secondary;
-
-            &:hover::after, &:focus::after {
-                opacity: 1;
-            }
-        }
-    }
-
-}
 // ########## Header end ##########
 
 // ########## Main ##########
@@ -366,42 +303,58 @@ nav {
 .page-hero {
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .page-hero-content {
-    @include flex-display (flex, column, wrap, inherit, start);
+    @include flex-display (flex, column, wrap, inherit, start, $space-s);
+    padding: $space-m;
 
     h2 {
         order: -1;
+    }
+}
+
+.about-summary {
+    img { max-width: 100%; }
+
+    article {
+        @include flex-display(flex, column, wrap, start, start, $space-s);
+        order: 2;
     }
 }
 
 .service {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-display(flex, column, wrap, center, center, $space-s);
     
-    i {
-        order: -1;
+    i { order: -1; }
+}
+
+.portfolio-tags {
+    @include flex-display(flex, row, wrap, start, center, $space-s);
+    max-width: 160rem;
+
+    h2 { width: 100%;
+        margin-bottom: 1rem;
     }
 }
 
-.portfolio-row {
-    @include flex-display (flex, row, wrap, center, center);
+#branding, #design, #development, .portfolio-tags {
+    padding-top: $space-m;
+    padding-bottom: $space-m;
+}
 
-    h2 {
-        width: 100%;
-        padding-bottom: 10px;
-        border-bottom: 2px solid $tertiary;
-    }
+.portfolio-header {
+    padding-bottom: 10px;
+    border-bottom: 2px solid $tertiary;
 }
 
 .portfolio-card {
-    @include flex-display (flex, column, wrap, center, start);
+    @include flex-display (flex, column, wrap, start, start, $space-s);
     text-decoration: none;
     color: $secondary;
     flex-grow: 1;
-    max-width: 629px;
+    max-width: 62.9rem;
     text-align: left;
     transition: .2s;
 
@@ -410,41 +363,45 @@ nav {
         width: 100%;
     }
 
-    &:hover, &:focus {
-        transform: scale(1.04);
+    @media only screen and (min-width: $breakpoint-small-laptop) {
+        &:hover, &:focus {
+            transform: scale(1.04);
+        }
     }
 }
 
 form {
-
+    box-sizing: border-box;
     input, textarea {
-        //width: 100%;
-        //padding: 10px;
-        //margin: 10px 0;
+        padding: 1rem 1.5rem;
         border: none;
-        //border-radius: 4px;
-        box-sizing: border-box;
         font-size: $text-m;
         font-family: 'Arial', sans-serif;
+    }
+
+    input[type=submit] {
+        margin-left: -2px;
     }
 }
 
 #contact {
+    .twocol {
+        padding-left: $space-xl;
+        padding-right: $space-xl;
+        gap: $space-m;
+    }
+
     form {
-        @include flex-display (flex, column, wrap, inherit, start);
+        @include flex-display (flex, column, wrap, start, start, $space-s);
 
         input, textarea {
-           // width: 100%;
-         //   padding: 10px;
-          //  margin: 10px 0;
-          //  border: 1px solid #ccc;
-           // border-radius: 4px;
-           // box-sizing: border-box;
+           width: 100%;
+           box-sizing: border-box;
         }
     }
 
     article {
-        @include flex-display (flex, column, wrap, space-between, start);
+        @include flex-display (flex, column, wrap, space-between, start, $space-s);
 
         text-align: left;
     }
@@ -458,7 +415,8 @@ form {
 // ########## Main end ##########
 
 // ########## Footer ##########
-.footer-inner {
+#footer-inner {
+    @include flex-display (flex, column, wrap, space-between, center, $space-xs);
     p {
         flex-grow: 2;
         text-align: center;
@@ -473,51 +431,30 @@ form {
 @media only screen and (min-width: $breakpoint-tablet) {
     header {
         flex-direction: row;
+        padding-top: $space-s;
+        padding-bottom: $space-s;
     }
 
-    nav {
-        ul {
-            flex-direction: row;
-        }
-    }
+    ul { flex-direction: row; }
 
-    .sec-onerow {
+    .row-nowrap {
         flex-direction: row;
-
+    
         article {
-            align-items: start;
-            text-align: left;
+            @include flex-display(flex, column, wrap, start, start, $space-s);
             order: 2;
         }
     }
-    .sec-twocol {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sec-fourcol {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .page-hero-content {
-        grid-column: 2;
-    }
-
-    .portfolio-row {
-        justify-content: start;
-    }
-
-    .footer-inner {
-        flex-direction: row;
-    }
+    .twocol { grid-template-columns: repeat(2, 1fr); }
+    .fourcol { grid-template-columns: repeat(4, 1fr); }
+    .page-hero-content { grid-column: 2; }
+    .row-wrap { justify-content: start; }
+    #footer-inner { flex-direction: row; }
 }
 
 @media only screen and (min-width: $breakpoint-small-laptop) {
-    #hero img {
-        display: none;
-    }
-    .hero-video {
-        display: block;
-    }
+    #hero img { display: none; }
+    .hero-video { display: block; }
 }
 
 
