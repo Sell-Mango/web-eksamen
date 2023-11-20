@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Company name">
+        <meta name="description" content="We are an award winning design studio located in the heart of Halden, Norway">
         <script src="https://kit.fontawesome.com/8aebfcef07.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/styles.css" type="text/css">
     
         <!-- Opengraph metadata -->
-        <meta property="og:url" content="https://itstud.hiof.no/~kjellmal/webutvikling/webeksamen/">
+        <meta property="og:url" content="https://itstud.hiof.no/~kjellmal/webutvikling/webeksamen/about.html">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Firstshoes - Billige sko hele året">
-        <meta property="og:description" content="Firstshoes er ledende for billige sko til hele familien i alle årstider. Gratis levering og 60 dagers åpent kjøp. Bli medlem og få tilbud på vintersko.">
+        <meta property="og:title" content="About us - Company name">
+        <meta property="og:description" content="We are an awardwinning design studio located in the heart of Halden, Norway.">
         <meta property="og:image" content="https://itstud.hiof.no/~kjellmal/webutvikling/webeksamen/img/x1280/pexels-negative-space-1280.jpg">
 
-        <title>Company name</title>
+        <title>About us - Company name</title>
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     </head>
     <body>
         <header class="content-center">
+            <a href="#about" class="skip-link">Skip to main content</a>
             <a href="index.html" class="logo"><img src="img/logo1.png" alt=""></a>
             <nav>
                 <ul class="text-s">
@@ -29,15 +30,14 @@
                 </ul>
             </nav>
         </header>
-        <main>
-            <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+        <main id="about">
             <section class="page-hero">
                 <div class="content-center twocol">
                     <article class="page-hero-content l-overlay">
                         <h1 class="heading-s">About our company</h1>
                         <h2 class="text-m">Company name</h2>
                         <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta. Aenean est dolor, bibendum vitae vestibulum finibus, porttitor a eros. Fusce vitae lectus aliquam justo rutrum suscipit. Quisque egestas risus urna, quis auctor tortor rhoncus eget. </p>
-                        <a href="#sec-contact" class="btn-primary btn-m">Get in touch with us</a>
+                        <a href="#contact" class="btn-primary btn-m">Get in touch with us</a>
                     </article>
                 </div>
                 <picture>
@@ -70,9 +70,9 @@
             </section>
             <section id="clients" class="row-wrap bg-yellow">
                 <h2 class="heading-m">Some of our clients</h2>
-                <img src="img/logo1.png" alt="">
-                <img src="img/logo2.png" alt="">
-                <img src="img/logo2.png" alt="">
+                <a href="#"><img src="img/logo1.png" alt=""></a>
+                <a href="#"><img src="img/logo2.png" alt=""></a>
+                <a href="#"><img src="img/logo2.png" alt=""></a>
             </section>
             <section id="contact" class="bg-light">
                 <div class="content-wrapper twocol">
@@ -90,7 +90,7 @@
                     <article>
                         <h3 class="heading-s">Contact information</h3>
                         <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus.</p>
-                        <address class="adr text-m"><i class="fa-solid fa-location-pin"></i>B.R.A Veien 4, 1757 Halden</address>
+                        <address class="adr text-m" tabindex="0"><i class="fa-solid fa-location-pin"></i>B.R.A Veien 4, 1757 Halden</address>
                         <a href="tel:12345678" class="adr text-m"><i class="fa-solid fa-phone"></i>12345678</a>
                         <a href="mailto:postmottak@hiof.no" class="adr text-m"><i class="fa-solid fa-envelope"></i>postmottak@hiof.no</a>
                     </article>
@@ -108,6 +108,7 @@
                 <a href="https://instagram.com" class="icon-s"><i class="fa-brands fa-square-instagram"></i></a>
                 <a href="https://linkedin.no" class="icon-s"><i class="fa-brands fa-linkedin"></i></a>
             </div>
+            <button onclick="topFunction()" id="toTop" title="Go to top" tabindex="0"><i class="fa-solid fa-arrow-up"></i></button>
         </footer>
 
         <!-- Google maps scrips. Kode fra Google sin dokumentasjon om å embedde Google maps på en webside: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key-->

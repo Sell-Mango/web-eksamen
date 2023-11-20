@@ -256,6 +256,20 @@ section, aside {
   grid-column: 1/-1;
 }
 
+.skip-link {
+  position: absolute;
+  top: auto;
+  left: -100rem;
+  background-color: #252525;
+  color: #fff;
+  padding: 1rem;
+  font-size: clamp(1.4rem, 1.4rem + (1vw - 0.4rem) * 0.3333, 1.6rem);
+}
+.skip-link:focus {
+  left: auto;
+  top: auto;
+}
+
 .logo {
   width: 100px;
 }
@@ -322,6 +336,9 @@ ul a:hover::after, ul a:focus::after {
   font-size: 18px;
   transition: 0.25s;
 }
+#toTop:focus {
+  outline: 0.15rem solid rgb(55, 55, 255);
+}
 @media only screen and (min-width: 991px) {
   #toTop:hover {
     transform: scale(1.05);
@@ -373,9 +390,15 @@ ul a:hover::after, ul a:focus::after {
   justify-content: center;
   align-items: center;
   gap: clamp(1.28rem, 0.42vw + 1.15rem, 1.73rem);
+  transition: 0.25s;
 }
 .service i {
   order: -1;
+}
+@media only screen and (min-width: 991px) {
+  .service:hover, .service:focus {
+    transform: scale(1.05);
+  }
 }
 
 .portfolio-tags {

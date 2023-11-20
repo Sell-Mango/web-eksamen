@@ -245,6 +245,22 @@ section, aside {
 // ########## Layout end ##########
 
 // ########## Header ##########
+.skip-link {
+    position: absolute;
+    top: auto;
+    left: -100rem;
+    background-color: $secondary;
+    color: $primary;
+    padding: 1rem;
+    font-size: $text-m;
+
+    &:focus {
+        left: auto;
+        top: auto;
+    }
+
+}
+
 .logo {
     width: 100px;
     img { width: 100%; }
@@ -314,6 +330,10 @@ ul {
     font-size: 18px;
     transition: .25s;
 
+    &:focus {
+        outline: .15rem solid rgb(55, 55, 255);
+    }
+
     @media only screen and (min-width: $breakpoint-small-laptop) {
         &:hover { transform: scale(1.05); }
     }
@@ -353,6 +373,11 @@ ul {
     @include flex-display(flex, column, wrap, center, center, $space-s);
     
     i { order: -1; }
+    transition: .25s;
+
+    @media only screen and (min-width: $breakpoint-small-laptop) {
+        &:hover, &:focus { transform: scale(1.05); }
+    }
 }
 
 .portfolio-tags {
