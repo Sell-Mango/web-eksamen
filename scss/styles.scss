@@ -121,7 +121,7 @@ $breakpoint-small-laptop: 991px;
     text-decoration: none;
 }
 
-.btn-m { @include button-size(1rem 1.5rem, $text-m, 700); }
+.btn-m { @include button-size(1.2rem 1.5rem, $text-m, 700); }
 .btn-l { @include button-size(10px 15px, $text-l, 700); }
 .btn-s { @include button-size(5px 10px, $text-m, 400); }
 
@@ -259,7 +259,6 @@ section, aside {
         left: auto;
         top: auto;
     }
-
 }
 
 .logo {
@@ -331,13 +330,9 @@ ul {
     font-size: 18px;
     transition: .25s;
 
-    &:focus {
-        outline: .15rem solid rgb(55, 55, 255);
-    }
+    &:focus { outline: .15rem solid rgb(55, 55, 255); }
 
-    @media only screen and (min-width: $breakpoint-small-laptop) {
-        &:hover { transform: scale(1.05); }
-    }
+    @media only screen and (min-width: $breakpoint-small-laptop) { &:hover { transform: scale(1.05); } }
 }
 
 //https://stackoverflow.com/questions/16823636/overlaying-a-div-on-top-of-html-5-video
@@ -376,9 +371,7 @@ ul {
     i { order: -1; }
     transition: .25s;
 
-    @media only screen and (min-width: $breakpoint-small-laptop) {
-        &:hover, &:focus { transform: scale(1.05); }
-    }
+    @media only screen and (min-width: $breakpoint-small-laptop) { &:hover, &:focus { transform: scale(1.05); } }
 }
 
 .portfolio-tags {
@@ -416,9 +409,7 @@ ul {
     }
 
     @media only screen and (min-width: $breakpoint-small-laptop) {
-        &:hover, &:focus {
-            transform: scale(1.04);
-        }
+        &:hover, &:focus { transform: scale(1.04); }
     }
 }
 
@@ -437,16 +428,14 @@ form {
         font-family: 'Arial', sans-serif;
     }
 
-    input[type=submit] {
-        margin-left: -2px;
-    }
+    input[type=submit] { margin-left: -2px; }
 }
 
 #contact {
     .twocol {
         padding-left: $space-xl;
         padding-right: $space-xl;
-        gap: $space-m;
+        gap: $space-l;
     }
 
     form {
@@ -472,8 +461,8 @@ form {
 }
 
 #maps {
-    padding-top: $space-2xl;
-    padding-bottom: $space-2xl;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 // ########## Main end ##########
@@ -490,6 +479,10 @@ form {
     }
     .icon-s {
         color: $primary;
+        transition: .25s;
+        @media only screen and (min-width: $breakpoint-small-laptop) {
+            &:hover, &:focus { transform: scale(1.05); }
+        }
     }
 }
 
@@ -524,6 +517,11 @@ form {
         p {
             width: inherit;
         }
+    }
+
+    #maps {
+        padding-top: $space-2xl;
+        padding-bottom: $space-2xl;
     }
 }
 

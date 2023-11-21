@@ -18,8 +18,8 @@
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     </head>
     <body>
+        <a href="#about" class="skip-link">Skip to main content</a>
         <header class="content-center">
-            <a href="#about" class="skip-link">Skip to main content</a>
             <a href="index.html" class="logo"><img src="img/logo1.png" alt=""></a>
             <nav>
                 <ul class="text-s">
@@ -30,19 +30,19 @@
                 </ul>
             </nav>
         </header>
-        <main id="about">
+        <main itemscope itemtype="https://schema.org/LocalBusiness" id="about">
             <section class="page-hero">
                 <div class="content-center twocol">
                     <article class="page-hero-content l-overlay">
                         <h1 class="heading-s">About our company</h1>
-                        <h2 class="text-m">Company name</h2>
+                        <h2 itemprop="name" class="text-m">Company name</h2>
                         <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta. Aenean est dolor, bibendum vitae vestibulum finibus, porttitor a eros. Fusce vitae lectus aliquam justo rutrum suscipit. Quisque egestas risus urna, quis auctor tortor rhoncus eget. </p>
                         <a href="#contact" class="btn-primary btn-m">Get in touch with us</a>
                     </article>
                 </div>
                 <picture>
                     <source srcset="img/x1280/pexels-negative-space-1280.jpg" media="(min-width: 768px)">
-                    <img src="img/pexels-negative-space.jpg" alt="" class="bg-image">
+                    <img src="img/pexels-negative-space.jpg" alt="" class="bg-image"> <!-- Bakgrunnsbilde, pynt-->
                 </picture>
             </section>
             <section id="services" class="content-center fourcol">
@@ -50,33 +50,33 @@
                 <article class="service">
                     <h3 class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-users icon-m"></i>
+                    <i class="fa-solid fa-users icon-m" aria-hidden="true"></i>
                 </article>
                 <article class="service">
                     <h3 class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-cloud-arrow-up icon-m"></i>
+                    <i class="fa-solid fa-cloud-arrow-up icon-m" aria-hidden="true"></i>
                 </article>
                 <article class="service">
                     <h3 class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-code icon-m"></i>
+                    <i class="fa-solid fa-code icon-m" aria-hidden="true"></i>
                 </article>
                 <article class="service">
                     <h3 class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-wifi icon-m"></i>
+                    <i class="fa-solid fa-wifi icon-m" aria-hidden="true"></i>
                 </article>
             </section>
             <section id="clients" class="row-wrap bg-yellow">
                 <h2 class="heading-m">Some of our clients</h2>
-                <a href="#"><img src="img/logo1.png" alt=""></a>
-                <a href="#"><img src="img/logo2.png" alt=""></a>
-                <a href="#"><img src="img/logo2.png" alt=""></a>
+                <a href="#"><img src="img/logo1.png" alt="Client logo 1" loading="lazy"></a>
+                <a href="#"><img src="img/logo2.png" alt="Client logo 2" loading="lazy"></a>
+                <a href="#"><img src="img/logo2.png" alt="Cool client logo 3" loading="lazy"></a>
             </section>
-            <section id="contact" class="bg-light">
+            <section id="contact" class="bg-light" aria-labelledby="contact-header">
                 <div class="content-center twocol">
-                    <h2 class="heading-m">Contact us</h2>
+                    <h2 id="contact-header" class="heading-m">Contact us</h2>
                     <form>
                         <h3 class="heading-s">Send us a message</h3>
                         <label for="c-name" class="text-s">Name</label>
@@ -90,25 +90,25 @@
                     <article>
                         <h3 class="heading-s">Contact information</h3>
                         <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus.</p>
-                        <address class="adr text-m" tabindex="0"><i class="fa-solid fa-location-pin"></i>B.R.A Veien 4, 1757 Halden</address>
-                        <a href="tel:12345678" class="adr text-m"><i class="fa-solid fa-phone"></i>12345678</a>
-                        <a href="mailto:postmottak@hiof.no" class="adr text-m"><i class="fa-solid fa-envelope"></i>postmottak@hiof.no</a>
+                        <address itemprop="address" itemscope itemtype="https://schema.org/PostalAdress" class="adr text-m" tabindex="0"><i class="fa-solid fa-location-pin" aria-hidden="true"></i><span itemprop="streetAddress">B.R.A Veien 4</span>, <span itemprop="postalCode">1757</span> <span itemprop="addressLocality">Halden</span></address>
+                        <a href="tel:12345678" class="adr text-m"><i class="fa-solid fa-phone" aria-hidden="true"></i>12345678</a>
+                        <a href="mailto:postmottak@hiof.no" class="adr text-m"><i class="fa-solid fa-envelope" aria-hidden="true"></i>postmottak@hiof.no</a>
                     </article>
                 </div>
             </section>
-            <section id="maps" class="bg-light">
+            <section title="Google maps" id="maps" class="bg-light">
 
             </section>
         </main>
         <footer class="bg-dark">
             <div id="footer-inner" class="content-center">
-                <a href="index.html" class="logo"><img src="img/logo1.png" alt=""></a>
+                <a href="index.html" class="logo"><img src="img/logo1.png" alt="Logo home" loading="lazy"></a>
                 <p class="text-s">Company © 2023</p>
-                <a href="https://facebook.com" class="icon-s"><i class="fa-brands fa-square-facebook"></i></a>
-                <a href="https://instagram.com" class="icon-s"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="https://linkedin.no" class="icon-s"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://facebook.com" class="icon-s" aria-label="Facebook page"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://instagram.com" class="icon-s" aria-label="Intsagram page"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://linkedin.no" class="icon-s" aria-label="Linkedin page"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-            <button onclick="topFunction()" id="toTop" title="Go to top" tabindex="0"><i class="fa-solid fa-arrow-up"></i></button>
+            <button onclick="topFunction()" id="toTop" aria-label="Go to top" tabindex="0"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
         </footer>
 
         <!-- Google maps scrips. Kode fra Google sin dokumentasjon om å embedde Google maps på en webside: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key-->

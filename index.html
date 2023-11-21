@@ -14,13 +14,13 @@
         <meta property="og:description" content="Company name is your complete design studio for branding, design and development. Contact us today to get your ideas to life.">
         <meta property="og:image" content="https://itstud.hiof.no/~kjellmal/webutvikling/webeksamen/img/x1280/pexels-negative-space-1280.jpg">
 
-        <title>Awardwinning design - Company name</title>
+        <title>Award winning design - Company name</title>
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     </head>
     <body>
+        <a href="#hero" class="skip-link">Skip to main content</a>
         <header class="content-center">
-            <a href="#hero" class="skip-link">Skip to main content</a>
-            <a href="index.html" class="logo"><img src="img/logo1.png" alt=""></a>
+            <a href="index.html" class="logo"><img src="img/logo1.png" alt="Home"></a>
             <nav>
                 <ul class="text-s">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -31,9 +31,9 @@
             </nav>
         </header>
         <main>
-            <section id="hero">
+            <section id="hero" aria-labelledby="first-heading">
                 <div class="content-center onecol">
-                    <h1 class="heading-l">Compeling headline</h1>
+                    <h1 id="first-heading" class="heading-l">Compeling headline</h1>
                     <p class="text-l">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam enim orci, blandit sed justo vel, sagittis scelerisque felis. Phasellus condimentum aliquet mauris, vitae finibus mi vehicula ut. Sed elit odio.</p>
                     <a href="#services" class="btn-primary btn-m">Read more about out services</a>
                 </div>
@@ -42,21 +42,21 @@
                 </video>
                 <picture>
                     <source srcset="img/x1280/pexels-negative-space-1280.jpg" media="(min-width: 768px)">
-                    <img src="img/pexels-negative-space.jpg" alt="" class="bg-image">
+                    <img src="img/pexels-negative-space.jpg" alt="" class="bg-image"> <!-- Bakgrunnsbilde, pynt-->
                 </picture>
             </section>
             <section class="content-center onecol">
                 <h2 class="heading-m">Engaging subheading. What can you help your visitors with</h2>
-                <p class="text-l">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta.</p>
+                <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta.</p>
             </section>
-            <section class="bg-yellow">
+            <section class="bg-yellow" aria-labelledby="about-summary-header">
                 <div class="content-center row-nowrap about-summary">
                     <article>
-                        <h2 class="heading-s">About our company</h2>
-                        <p class="text-l">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta.</p>
+                        <h2 id="about-summary-header" class="heading-s">About our company</h2>
+                        <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta.</p>
                         <a href="about.html" class="btn-secondary btn-m">Read more about our us</a>
                     </article>
-                    <img src="img/placeholder_400x400.jpg" alt="">
+                    <img src="img/placeholder_400x400.jpg" alt="Placeholder for about us">
                 </div>
             </section>
             <section id="services" class="content-center fourcol">
@@ -64,41 +64,42 @@
                 <article class="service" tabindex="0">
                     <h3 class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-users icon-m"></i>
+                    <i class="fa-solid fa-users icon-m" aria-hidden="true"></i>
                 </article>
                 <article class="service" tabindex="0">
                     <h3 class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-cloud-arrow-up icon-m"></i>
+                    <i class="fa-solid fa-cloud-arrow-up icon-m" aria-hidden="true"></i>
                 </article>
                 <article class="service" tabindex="0">
                     <h3 class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-code icon-m"></i>
+                    <i class="fa-solid fa-code icon-m" aria-hidden="true"></i>
                 </article>
                 <article class="service" tabindex="0">
                     <h3 class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                    <i class="fa-solid fa-wifi icon-m"></i>
+                    <i class="fa-solid fa-wifi icon-m" aria-hidden="true"></i>
                 </article>
             </section>
         </main>
         <aside class="content-center bg-light">
             <h2 class="heading-m">Sign up for our newsletter</h2>
             <form>
-                <input type="email" placeholder="Email">
+                <label for="s-mail" hidden>Your email</label>
+                <input type="email" id="s-mail" placeholder="Email">
                 <input type="submit" value="Sign me up" class="btn-primary btn-m">
             </form>
         </aside>
         <footer class="bg-dark">
             <div id="footer-inner" class="content-center">
-                <a href="index.html" class="logo"><img src="img/logo1.png" alt=""></a>
+                <a href="index.html" class="logo"><img src="img/logo1.png" alt="Logo home" loading="lazy"></a>
                 <p class="text-s">Company © 2023</p>
-                <a href="https://facebook.com" class="icon-s"><i class="fa-brands fa-square-facebook"></i></a>
-                <a href="https://instagram.com" class="icon-s"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="https://linkedin.no" class="icon-s"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://facebook.com" class="icon-s" aria-label="Facebook page"><i class="fa-brands fa-square-facebook"></i></a>
+                <a href="https://instagram.com" class="icon-s" aria-label="Intsagram page"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://linkedin.no" class="icon-s" aria-label="Linkedin page"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-            <button onclick="topFunction()" id="toTop" title="Go to top" tabindex="0"><i class="fa-solid fa-arrow-up"></i></button>
+            <button onclick="topFunction()" id="toTop" aria-label="Go to top" tabindex="0"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
         </footer>
         <script src="js/script.js"></script>
     </body>
