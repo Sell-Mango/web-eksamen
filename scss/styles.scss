@@ -455,9 +455,11 @@ form {
 }
 
 .adr {
-    @include flex-display(flex, row, nowrap, start, start, $space-xs);
+    @include flex-display(flex, row, nowrap, start, center, 0);
     text-decoration: none;
     color: $secondary;
+    
+    i { margin-right: $space-xs; }
 }
 
 #maps {

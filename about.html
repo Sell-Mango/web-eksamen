@@ -17,10 +17,10 @@
         <title>About us - Company name</title>
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     </head>
-    <body>
+    <body itemscope itemtype="https://schema.org/LocalBusiness">
         <a href="#about" class="skip-link">Skip to main content</a>
         <header class="content-center">
-            <a href="index.html" class="logo"><img src="img/logo1.png" alt=""></a>
+            <a itemprop="url" href="index.html" class="logo"><img itemprop="logo" src="img/logo1.png" alt="Logo home"></a>
             <nav>
                 <ul class="text-s">
                     <li><a href="index.html">Home</a></li>
@@ -30,40 +30,40 @@
                 </ul>
             </nav>
         </header>
-        <main itemscope itemtype="https://schema.org/LocalBusiness" id="about">
+        <main id="about">
             <section class="page-hero">
                 <div class="content-center twocol">
                     <article class="page-hero-content l-overlay">
                         <h1 class="heading-s">About our company</h1>
                         <h2 itemprop="name" class="text-m">Company name</h2>
-                        <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta. Aenean est dolor, bibendum vitae vestibulum finibus, porttitor a eros. Fusce vitae lectus aliquam justo rutrum suscipit. Quisque egestas risus urna, quis auctor tortor rhoncus eget. </p>
+                        <p itemprop="description" class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus. Maecenas aliquam nisl nec ex finibus porta. Aenean est dolor, bibendum vitae vestibulum finibus, porttitor a eros. Fusce vitae lectus aliquam justo rutrum suscipit. Quisque egestas risus urna, quis auctor tortor rhoncus eget. </p>
                         <a href="#contact" class="btn-primary btn-m">Get in touch with us</a>
                     </article>
                 </div>
                 <picture>
                     <source srcset="img/x1280/pexels-negative-space-1280.jpg" media="(min-width: 768px)">
-                    <img src="img/pexels-negative-space.jpg" alt="" class="bg-image"> <!-- Bakgrunnsbilde, pynt-->
+                    <img itemprop="image" src="img/pexels-negative-space.jpg" alt="" class="bg-image"> <!-- Bakgrunnsbilde, pynt-->
                 </picture>
             </section>
-            <section id="services" class="content-center fourcol">
+            <section itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog" id="services" class="content-center fourcol">
                 <h2 class="heading-m">Our services</h2>
-                <article class="service">
-                    <h3 class="heading-s">Branding</h3>
+                <article itemprop="itemListElement" itemscope itemtype="https://schema.org/Service" class="service">
+                    <h3 itemprop="name" class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-users icon-m" aria-hidden="true"></i>
                 </article>
-                <article class="service">
-                    <h3 class="heading-s">Branding</h3>
+                <article itemprop="itemListElement" itemscope itemtype="https://schema.org/Service" class="service">
+                    <h3 itemprop="name" class="heading-s">Design</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-cloud-arrow-up icon-m" aria-hidden="true"></i>
                 </article>
-                <article class="service">
-                    <h3 class="heading-s">Branding</h3>
+                <article itemprop="itemListElement" itemscope itemtype="https://schema.org/Service" class="service">
+                    <h3 itemprop="name" class="heading-s">Development</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-code icon-m" aria-hidden="true"></i>
                 </article>
-                <article class="service">
-                    <h3 class="heading-s">Branding</h3>
+                <article itemprop="itemListElement" itemscope itemtype="https://schema.org/Service" class="service">
+                    <h3 itemprop="name" class="heading-s">Support</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-wifi icon-m" aria-hidden="true"></i>
                 </article>
@@ -90,14 +90,13 @@
                     <article>
                         <h3 class="heading-s">Contact information</h3>
                         <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet diam metus.</p>
-                        <address itemprop="address" itemscope itemtype="https://schema.org/PostalAdress" class="adr text-m" tabindex="0"><i class="fa-solid fa-location-pin" aria-hidden="true"></i><span itemprop="streetAddress">B.R.A Veien 4</span>, <span itemprop="postalCode">1757</span> <span itemprop="addressLocality">Halden</span></address>
-                        <a href="tel:12345678" class="adr text-m"><i class="fa-solid fa-phone" aria-hidden="true"></i>12345678</a>
+                        <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress" class="adr text-m" tabindex="0"><i class="fa-solid fa-location-pin" aria-hidden="true"></i><span itemprop="streetAddress">B.R.A Veien 4 </span>,<span itemprop="postalCode">1757</span><span itemprop="addressLocality">Halden</span></address>
+                        <a href="tel:69608000" class="adr text-m"><i class="fa-solid fa-phone" aria-hidden="true"></i><span itemprop="telephone">69 60 80 00</span></a>
                         <a href="mailto:postmottak@hiof.no" class="adr text-m"><i class="fa-solid fa-envelope" aria-hidden="true"></i>postmottak@hiof.no</a>
                     </article>
                 </div>
             </section>
             <section title="Google maps" id="maps" class="bg-light">
-
             </section>
         </main>
         <footer class="bg-dark">
@@ -114,37 +113,7 @@
         <!-- Google maps scrips. Kode fra Google sin dokumentasjon om å embedde Google maps på en webside: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key-->
         <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
         ({key: "AIzaSyCvBaWq_SZ4NXXNMQ6eBm1w2xP-mi4FFVM", v: "weekly"});</script>
-        
-        <script>
-            // Kode fra Google sin dokumentasjon om hvordan embedde Google Maps på en webside: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
-            // Initialize and add the map
-            let map;
-
-            async function initMap() {
-            // The location of Høgskolen i Østfold, Halden
-            const position = { lat: 59.12934101633533, lng: 11.353586517141622 };
-            // Request needed libraries.
-            //@ts-ignore
-            const { Map } = await google.maps.importLibrary("maps");
-            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-
-            // The map, centered at Uluru
-            map = new Map(document.getElementById("maps"), {
-                zoom: 13,
-                center: position,
-                mapId: "DEMO_MAP_ID",
-            });
-
-            // The marker, positioned at Høgskolen i Østfold, Remmen
-            const marker = new AdvancedMarkerElement({
-                map: map,
-                position: position,
-                title: "Remmen",
-            });
-            }
-
-            initMap();
-        </script>
+        <script src="js/maps.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

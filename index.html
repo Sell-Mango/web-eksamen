@@ -10,17 +10,17 @@
         <!-- Opengraph metadata -->
         <meta property="og:url" content="https://itstud.hiof.no/~kjellmal/webutvikling/webeksamen/">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Awardwinning design - Company name">
+        <meta property="og:title" content="Award winning design - Company name">
         <meta property="og:description" content="Company name is your complete design studio for branding, design and development. Contact us today to get your ideas to life.">
         <meta property="og:image" content="https://itstud.hiof.no/~kjellmal/webutvikling/webeksamen/img/x1280/pexels-negative-space-1280.jpg">
 
         <title>Award winning design - Company name</title>
         <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     </head>
-    <body>
+    <body itemscope itemtype="https://schema.org/LocalBusiness">
         <a href="#hero" class="skip-link">Skip to main content</a>
         <header class="content-center">
-            <a href="index.html" class="logo"><img src="img/logo1.png" alt="Home"></a>
+            <a itemprop="url" href="index.html" class="logo"><img itemprop="logo" src="img/logo1.png" alt="Logo home"></a>
             <nav>
                 <ul class="text-s">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -33,8 +33,8 @@
         <main>
             <section id="hero" aria-labelledby="first-heading">
                 <div class="content-center onecol">
-                    <h1 id="first-heading" class="heading-l">Compeling headline</h1>
-                    <p class="text-l">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam enim orci, blandit sed justo vel, sagittis scelerisque felis. Phasellus condimentum aliquet mauris, vitae finibus mi vehicula ut. Sed elit odio.</p>
+                    <h1 itemprop="name" id="first-heading" class="heading-l">Award winning design</h1>
+                    <p itemprop="description" class="text-l">Company name is your complete design studio for branding, design and development. Contact us today to get your ideas to life.</p>
                     <a href="#services" class="btn-primary btn-m">Read more about out services</a>
                 </div>
                 <video autoplay muted loop class="hero-video">
@@ -42,7 +42,7 @@
                 </video>
                 <picture>
                     <source srcset="img/x1280/pexels-negative-space-1280.jpg" media="(min-width: 768px)">
-                    <img src="img/pexels-negative-space.jpg" alt="" class="bg-image"> <!-- Bakgrunnsbilde, pynt-->
+                    <img itemprop="image" src="img/pexels-negative-space.jpg" alt="" class="bg-image"> <!-- Bakgrunnsbilde, pynt-->
                 </picture>
             </section>
             <section class="content-center onecol">
@@ -59,24 +59,24 @@
                     <img src="img/placeholder_400x400.jpg" alt="Placeholder for about us">
                 </div>
             </section>
-            <section id="services" class="content-center fourcol">
+            <section itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog" id="services" class="content-center fourcol">
                 <h2 class="heading-m">Our services</h2>
-                <article class="service" tabindex="0">
-                    <h3 class="heading-s">Branding</h3>
+                <article itemprop="itemListElement" itemscope itemtype="https://schema.org/Service" class="service" tabindex="0">
+                    <h3 itemprop="name" class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-users icon-m" aria-hidden="true"></i>
                 </article>
-                <article class="service" tabindex="0">
-                    <h3 class="heading-s">Branding</h3>
+                <article itemprop="itemListElement" itemscope itemtype="https://schema.org/Service" class="service" tabindex="0">
+                    <h3 itemprop="name" class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-cloud-arrow-up icon-m" aria-hidden="true"></i>
                 </article>
-                <article class="service" tabindex="0">
-                    <h3 class="heading-s">Branding</h3>
+                <article itemprop="itemListElement" itemscope itemtype="https://schema.org/Service" class="service" tabindex="0">
+                    <h3 itemprop="name" class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-code icon-m" aria-hidden="true"></i>
                 </article>
-                <article class="service" tabindex="0">
+                <article itemprop="itemListElement" itemscope itemtype="https://schema.org/Service" class="service" tabindex="0">
                     <h3 class="heading-s">Branding</h3>
                     <p class="text-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                     <i class="fa-solid fa-wifi icon-m" aria-hidden="true"></i>
