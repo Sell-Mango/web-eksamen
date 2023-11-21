@@ -333,8 +333,7 @@ ul a:hover::after, ul a:focus::after {
   color: #fff;
   cursor: pointer;
   padding: 15px;
-  border-radius: 10px;
-  font-size: 18px;
+  font-size: clamp(1.6rem, 1.6rem + (1vw - 0.4rem) * 0.3333, 1.8rem);
   transition: 0.25s;
 }
 #toTop:focus {

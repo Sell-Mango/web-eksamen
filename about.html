@@ -70,7 +70,7 @@
             </section>
             <section id="clients" class="row-wrap bg-yellow">
                 <h2 class="heading-m">Some of our clients</h2>
-                <a href="#"><img src="img/logo1.png" alt="Client logo 1" loading="lazy"></a>
+                <a href="#"><img src="img/logo1.png" alt="Client logo 1" loading="lazy"></a> <!-- Logo/bilde til en viktig kunde som fungerer som link til ekstern side, innhold -->
                 <a href="#"><img src="img/logo2.png" alt="Client logo 2" loading="lazy"></a>
                 <a href="#"><img src="img/logo2.png" alt="Cool client logo 3" loading="lazy"></a>
             </section>
@@ -101,14 +101,14 @@
         </main>
         <footer class="bg-dark">
             <div id="footer-inner" class="content-center">
-                <a href="index.html" class="logo"><img src="img/logo1.png" alt="Logo home" loading="lazy"></a>
+                <a href="index.html" class="logo"><img src="img/logo1.png" alt="Logo home" loading="lazy"></a><!-- Logo til nettstedet og link til forsiden. En del av innholdet. -->
                 <p class="text-s">Company © 2023</p>
                 <a href="https://facebook.com" class="icon-s" aria-label="Facebook page"><i class="fa-brands fa-square-facebook"></i></a>
                 <a href="https://instagram.com" class="icon-s" aria-label="Intsagram page"><i class="fa-brands fa-square-instagram"></i></a>
                 <a href="https://linkedin.no" class="icon-s" aria-label="Linkedin page"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-            <button onclick="topFunction()" id="toTop" aria-label="Go to top" tabindex="0"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
         </footer>
+        <a href="#" id="toTop" aria-label="Go to top" tabindex="0"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a> <!-- Tutorial kode fra W3chools om å implementere back to top knapp, men har forenklet funksjonaliteten litt med å gjøre om knappen til en a tag med en anchor som tar brukeren øverst til den nåværende siden, istedenfor å bruke Javascipt. -->
 
         <!-- Google maps scrips. Kode fra Google sin dokumentasjon om å embedde Google maps på en webside: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key-->
         <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
