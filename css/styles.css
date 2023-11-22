@@ -510,6 +510,9 @@ form input[type=submit] {
 .adr i {
   margin-right: clamp(1.02rem, 0.12vw + 0.98rem, 1.16rem);
 }
+.adr :not(:first-child) {
+  margin-left: 0.5rem;
+}
 
 #maps {
   padding-top: 10rem;

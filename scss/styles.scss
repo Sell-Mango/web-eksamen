@@ -21,6 +21,7 @@ $tertiary: #e6bd43;
 $black: #000;
 $l-overlay: rgba(255, 255, 255, 0.6);
 
+//Clamp funksjoner for responsiv tekst og gaps er generert med Websemantics sin Fluid-responsive property calculator. Link: https://websemantics.uk/tools/fluid-responsive-property-calculator/
 //Font sizes
 $heading-l: clamp(2.9rem, 2.85vw + 1.81rem, 4.64rem);
 $heading-m: clamp(2.15rem, 1.34vw + 1.65rem, 2.97rem);
@@ -298,6 +299,7 @@ ul {
     h1, p, a { z-index: 5; }
 }
 
+//Posisjonere overlay over bakgrunnsvideo ved bruk av ::before pseudo element på foreldreelementet. Kode fra: https://stackoverflow.com/questions/16823636/overlaying-a-div-on-top-of-html-5-video
 #hero::before {
     content: '';
     position: absolute;
@@ -333,8 +335,6 @@ ul {
 
     @media only screen and (min-width: $breakpoint-small-laptop) { &:hover { transform: scale(1.05); } }
 }
-
-//https://stackoverflow.com/questions/16823636/overlaying-a-div-on-top-of-html-5-video
 
 #portfolio .page-hero {
     padding-top: $space-2xl;
@@ -459,6 +459,9 @@ form {
     color: $secondary;
     
     i { margin-right: $space-xs; }
+    :not(:first-child) {
+        margin-left: .5rem;
+    }
 }
 
 #maps {
