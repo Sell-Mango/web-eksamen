@@ -285,8 +285,10 @@ ul {
         font-weight: 400;
         color: $secondary;
 
-        &:hover::after, &:focus::after {
-            opacity: 1;
+        @media only screen and (min-width: $breakpoint-small-laptop) {
+            &:hover::after, &:focus::after {
+                opacity: 1;
+            }
         }
     }
 }

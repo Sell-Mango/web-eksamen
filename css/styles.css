@@ -295,8 +295,10 @@ ul a {
   font-weight: 400;
   color: #252525;
 }
-ul a:hover::after, ul a:focus::after {
-  opacity: 1;
+@media only screen and (min-width: 991px) {
+  ul a:hover::after, ul a:focus::after {
+    opacity: 1;
+  }
 }
 
 #hero {
