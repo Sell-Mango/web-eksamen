@@ -39,9 +39,9 @@ $space-m: clamp(2rem, calc(1.81vw + 1.42rem), 3.96rem);
 $space-l: clamp(2.5rem, calc(3.1vw + 1.51rem), 5.85rem);
 $space-xl: clamp(3.13rem, calc(5.23vw + 1.45rem), 8.78rem);
 $space-2xl: clamp(3.6rem, calc(9.22vw + 0.65rem), 13.57rem);
-//$space-3xl: clamp(3.91rem, calc(8.57vw + 1.16rem), 13.16rem);
 
-$document-padding: 2rem;
+//Padding på hver side og maksbredde
+$document-padding: $space-m;
 $document-width: 160rem;
 
 //Breakpoints
@@ -370,7 +370,7 @@ ul {
     i { order: -1; }
     transition: .25s;
 
-    @media only screen and (min-width: $breakpoint-small-laptop) { &:hover, &:focus { transform: scale(1.05); } }
+    @media only screen and (min-width: $breakpoint-small-laptop) { &:hover, &:focus { transform: scale(1.05); } } // Legger til hover på kort på større skjermstørrelser.
 }
 
 .portfolio-tags {
@@ -408,7 +408,7 @@ ul {
     }
 
     @media only screen and (min-width: $breakpoint-small-laptop) {
-        &:hover, &:focus { transform: scale(1.04); }
+        &:hover, &:focus { transform: scale(1.04); } // Legger til hover på kort på større skjermstørrelser. 
     }
 }
 
@@ -508,8 +508,8 @@ form {
             order: 2;
         }
     }
-    .twocol { grid-template-columns: repeat(2, 1fr); }
-    .fourcol { grid-template-columns: repeat(4, 1fr); }
+    .twocol { grid-template-columns: repeat(2, 1fr); } // Endre fra en til to kolonner på tablet størrelse eller større
+    .fourcol { grid-template-columns: repeat(4, 1fr); } // Endre fra en til fire kolonner på tablet størrelse eller større
     .page-hero-content { grid-column: 2; }
     #footer-inner { flex-direction: row; }
 
@@ -518,9 +518,7 @@ form {
     #footer-inner {
         gap: $space-xs;
     
-        p {
-            width: inherit;
-        }
+        p { width: inherit; }
     }
 
     #maps {
@@ -530,8 +528,8 @@ form {
 }
 
 @media only screen and (min-width: $breakpoint-small-laptop) {
-    #hero img { display: none; }
-    .hero-video { display: block; }
+    #hero img { display: none; } //Skjuler bakgrunnsbilde på større skjermstørrelser
+    .hero-video { display: block; } // Viser bakgrunnsvideo på større skjermstørrelser
 }
 
 

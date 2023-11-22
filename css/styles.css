@@ -147,16 +147,16 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: clamp(1.28rem, 0.42vw + 1.15rem, 1.73rem);
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
+  padding-right: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
   max-width: 160rem;
   padding-top: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
   padding-bottom: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
 }
 
 footer {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
+  padding-right: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
   max-width: 100%;
   padding-top: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
   padding-bottom: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
@@ -182,8 +182,8 @@ ul {
 }
 
 section, aside {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
+  padding-right: clamp(2rem, 1.81vw + 1.42rem, 3.96rem);
   max-width: 100%;
   padding-top: clamp(3.13rem, 5.23vw + 1.45rem, 8.78rem);
   padding-bottom: clamp(3.13rem, 5.23vw + 1.45rem, 8.78rem);
